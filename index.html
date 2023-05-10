@@ -65,12 +65,38 @@
 <div class="after"></div>
 </div>
 <h1>吴联圳❤</h1>
-<h2>Happy 26th Birthday!</h2>
+<h2>Happy 25th Birthday!</h2>
 <span>🎉</span>
 <div class="candle">
 <div id="flame" class="lit"></div>
 </div>
 
+<div class="box"></div>
+    <script>
+        function getTime() {
+            var date = new Date();
+            var year = date.getFullYear(); //获取年份
+            var month = date.getMonth() + 1; //获取月份
+            var day = date.getDate(); //获取日期
+            var hour = date.getHours(); //获取小时
+            hour = hour < 10 ? '0' + hour : hour;
+            var minute = date.getMinutes(); // 获取分
+            minute = minute < 10 ? '0' + minute : minute;
+            var seconds = date.getSeconds(); //获取秒
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            return year + '年' + month + '月' + day + '日&nbsp;' + hour + ':' + minute + ':' + seconds;
+        }
+ 
+        setInterval(function() {
+            document.querySelector('.box').innerHTML = getTime();
+        }, 1000)
+    </script>
+    <div style="clear:both;text-align:right;" class="text">
+  
+      <a href="memories.html" target="_blank">
+      <button class="button">Push</button>
+      </a>
+  </div>  
 <div class="cake"></div>
 <div class="plate"></div>
 <style>
@@ -83,8 +109,35 @@
   font-size: 90px;
   display: block;
 }
+       
+div.text {
+  position: absolute;
+    right: 0px;
+    width: 300px;
+    bottom: 0px; 
+    padding: 1px;
+   
+}
+button.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #e0d1fa;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
 
-h1, h2, span {
+button.button:hover {background-color: #c2dbfc}
+
+
+
+h1, h2, span{
   display: none;
 }
 
@@ -137,6 +190,17 @@ h1, h2, span {
     background: -webkit-linear-gradient(90deg, #e9e6ff 0%, white 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+  .box{
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    top: 10px;
+    font-size: 50px;
+    background: -webkit-linear-gradient(90deg, #e9e6ff 0%, white 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
   }
 
   bokeh {
